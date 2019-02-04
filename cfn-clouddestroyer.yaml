@@ -1,0 +1,484 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+
+  Budgets:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "budgets.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Cloud9:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "cloud9.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  CloudFormation:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "cloudformation.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Cognito:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "cognito.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Beanstalk:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "beanstalk.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Athena:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "athena.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  DynamoDB:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "dynamodb.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  EBS:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "ebs.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  EC2:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "ec2.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  ECR:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "ecr.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  ECS:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "ecs.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  EMR:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "emr.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Firehose:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "firehose.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Keypairs:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "keypairs.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Lambda:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "lambda.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  S3:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "s3.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Sagemaker:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "sagemaker.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  Stopper:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "stopper.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  RDS:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "rds.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  SG:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "sg.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  IAM:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "iam.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  VPC:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Handler: "vpc.lambda_handler"
+      Role: !GetAtt FullAccessLambdaRole.Arn
+      Code:
+        S3Bucket: "clouddestroyer"
+        S3Key: "functions.zip"
+      Runtime: "python3.6"
+      Timeout: 900
+
+  FullAccessLambdaRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: All
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "*"
+                Resource:
+                  - "*"
+
+  StatesExecutionRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - !Sub states.${AWS::Region}.amazonaws.com
+            Action: "sts:AssumeRole"
+      Path: "/"
+      Policies:
+        - PolicyName: StatesExecutionPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "lambda:InvokeFunction"
+                Resource: "*"
+
+  CloudDestroyer:
+    Type: "AWS::StepFunctions::StateMachine"
+    Properties:
+      DefinitionString:
+        !Sub
+          - |-
+            {
+              "Comment": "Cloud Destroyer!!!",
+              "StartAt": "CloudFormation",
+              "States": {
+                "CloudFormation": {
+                  "Type": "Task",
+                  "Resource": "${CloudFormationLambdaArn}",
+                  "Next": "Athena"
+                },
+                "Athena": {
+                  "Type": "Task",
+                  "Resource": "${AthenaLambdaArn}",
+                  "Next": "Parallel"
+                },
+                "Parallel": {
+                  "Type": "Parallel",
+                  "Next": "EC2",
+                  "Branches": [
+                    {
+                      "StartAt": "Budgets",
+                      "States": {
+                        "Budgets": {
+                          "Type": "Task",
+                          "Resource": "${BudgetsLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "Stopper",
+                      "States": {
+                        "Stopper": {
+                          "Type": "Task",
+                          "Resource": "${StopperLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "Lambdas",
+                      "States": {
+                        "Lambdas": {
+                          "Type": "Task",
+                          "Resource": "${LambdaLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "DynamoDB",
+                      "States": {
+                        "DynamoDB": {
+                          "Type": "Task",
+                          "Resource": "${DynamoDBLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "Firehose",
+                      "States": {
+                        "Firehose": {
+                          "Type": "Task",
+                          "Resource": "${FirehoseLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "EMR",
+                      "States": {
+                        "EMR": {
+                          "Type": "Task",
+                          "Resource": "${EMRLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "KeyPairs",
+                      "States": {
+                        "KeyPairs": {
+                          "Type": "Task",
+                          "Resource": "${KeyPairsLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "ECR",
+                      "States": {
+                        "ECR": {
+                          "Type": "Task",
+                          "Resource": "${ECRLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "ECS",
+                      "States": {
+                        "ECS": {
+                          "Type": "Task",
+                          "Resource": "${ECSLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "Cloud9",
+                      "States": {
+                        "Cloud9": {
+                          "Type": "Task",
+                          "Resource": "${Cloud9LambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "Cognito",
+                      "States": {
+                        "Cognito": {
+                          "Type": "Task",
+                          "Resource": "${CognitoLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "S3",
+                      "States": {
+                        "S3": {
+                          "Type": "Task",
+                          "Resource": "${S3LambdaArn}",
+                           "End": true
+                        }
+                      }
+                    },
+                    {
+                      "StartAt": "RDS",
+                      "States": {
+                        "RDS": {
+                          "Type": "Task",
+                          "Resource": "${RDSLambdaArn}",
+                           "End": true
+                        }
+                      }
+                    }
+                  ]
+                },
+                "EC2": {
+                  "Type": "Task",
+                  "Resource": "${EC2LambdaArn}",
+                  "Next": "Beanstalk"
+                },
+                "Beanstalk": {
+                  "Type": "Task",
+                  "Resource": "${BeanstalkLambdaArn}",
+                  "Next": "EBS"
+                },
+                "EBS": {
+                   "Type": "Task",
+                   "Resource": "${EBSLambdaArn}",
+                   "Next": "Sagemaker"
+                },
+                "Sagemaker": {
+                   "Type": "Task",
+                   "Resource": "${SagemakerLambdaArn}",
+                   "Next": "SG"
+                },
+                "SG": {
+                   "Type": "Task",
+                   "Resource": "${SGLambdaArn}",
+                   "Next": "VPC"
+                },
+                "VPC": {
+                   "Type": "Task",
+                   "Resource": "${VPCLambdaArn}",
+                   "Next": "IAM"
+                },
+                "IAM": {
+                  "Type": "Task",
+                  "Resource": "${IAMLambdaArn}",
+                  "End": true
+                }
+              }
+            }
+          - { CloudFormationLambdaArn: !GetAtt [ CloudFormation, Arn ], BudgetsLambdaArn: !GetAtt [ Budgets, Arn ], S3LambdaArn: !GetAtt [ S3, Arn ], StopperLambdaArn: !GetAtt [ Stopper, Arn ], LambdaLambdaArn: !GetAtt [ Lambda, Arn ], AthenaLambdaArn: !GetAtt [ Athena, Arn ], DynamoDBLambdaArn: !GetAtt [ DynamoDB, Arn ], FirehoseLambdaArn: !GetAtt [ Firehose, Arn ], EMRLambdaArn: !GetAtt [ EMR, Arn ], KeyPairsLambdaArn: !GetAtt [ Keypairs, Arn ], ECRLambdaArn: !GetAtt [ ECR, Arn ], ECSLambdaArn: !GetAtt [ ECS, Arn ], Cloud9LambdaArn: !GetAtt [ Cloud9, Arn ], EC2LambdaArn: !GetAtt [ EC2, Arn ], CognitoLambdaArn: !GetAtt [ Cognito, Arn ], EBSLambdaArn: !GetAtt [ EBS, Arn ], SagemakerLambdaArn: !GetAtt [ Sagemaker, Arn ], RDSLambdaArn: !GetAtt [ RDS, Arn ], BeanstalkLambdaArn: !GetAtt [ Beanstalk, Arn ], IAMLambdaArn: !GetAtt [ IAM, Arn ], VPCLambdaArn: !GetAtt [ VPC, Arn ], SGLambdaArn: !GetAtt [ SG, Arn ]}
+      RoleArn: !GetAtt [ StatesExecutionRole, Arn ]
